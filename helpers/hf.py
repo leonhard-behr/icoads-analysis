@@ -1,5 +1,5 @@
 """huggingface helper functions"""
-from datasets import load_from_disk
+from datasets import load_from_disk, load_dataset as load_dataset_hf
 import os
 
 def load_dataset(dataset_path="./hf_dataset", split=None):
@@ -27,3 +27,30 @@ def load_dataset(dataset_path="./hf_dataset", split=None):
     else:
         print("Dataset not found.")
         return None
+
+
+# cache dictionary to store loaded datasets
+_icoads_cache = {}
+
+def load_icoads_subset(split: str, token: str = None):
+    """
+    Load the specified ICOADS subset (Group 3–7 or 9).
+    Downloads and caches all subsets upon first use.
+
+    Parameters:
+        split (str): One of "3", "4", "5", "6", "7", or "9"
+
+    Returns:
+        DatasetDict: Hugging Face dataset for the given group
+    """
+    valid_splits = ["3", "4", "5", "6", "7", "9"]
+    if split not in valid_splits:
+        raise ValueError(f"Invalid split: {split}. Choose from {valid_splits}.")
+
+    if not _icoads_cache:
+        print("Downloading and caching all ICOADS subsets (Groups 3–7, 9)...")
+        for group in valid_splits:
+            dataset_name = f"leonhard-behr/msg1-enh-icoads-subset-{group}"
+            _icoads_cache[group] = load_dataset_hf(dataset_name, token=token)
+    
+    return _icoads_cache[split]
