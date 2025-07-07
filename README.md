@@ -27,14 +27,14 @@
 
 <h2 align="center"></b>Introduction</b></h2>
 
-The International Comprehensive Ocean-Atmosphere Data Set (ICOADS) represents one of the most comprehensive and extensively used collections of surface marine data in existence. This dataset integrates observations from multiple sources (e.g. ships, buoys, coastal stations, and other platforms) spanning from the late 18th century to present day, though this analysis uses datapoints ranging from 1960 to 2014.
+The International Comprehensive Ocean-Atmosphere Data Set (**ICOADS**) represents one of the most comprehensive and extensively used collections of surface marine data in existence. This dataset integrates observations from multiple sources (e.g. ships, buoys, coastal stations, and other platforms) spanning from the late 18th century to present day, though this analysis uses datapoints ranging from 1960 to 2014.
 
 The dataset's global coverage and multi-decadal time span make it particularly valuable for climate research, enabling investigations into long-term trends, seasonal variability, and regional patterns. The observational nature of ICOADS data provides empirical evidence of ocean-atmosphere coupling processes that are crucial for understanding the Earth's climate system and validating climate models.
 
 
 <h2 align="center"></b>Notebook</b></h2>
 
-The notebook `main.ipynb` contains the complete analysis of the ICOADS dataset. Some functions are defined in the seperate scripts provided in the `/helper` folder. 
+The notebook `main.ipynb` contains the complete analysis of the ICOADS dataset. Some functions are defined in the seperate scripts provided in the `/helpers` folder. 
 
 
 <h2 align="center"></b>License</b></h2>
