@@ -1,0 +1,9 @@
+pandas
+scikit-learn
+scipy
+matplotlib
+datasets
+plotly
+numpy
+cartopy
+folium
